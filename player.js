@@ -88,7 +88,6 @@ Player.prototype = {
     setSpeed: function (speed) {
         try {
             this.speed = JSON.parse(speed);
-            //console.log('set speed: ', this.speed);
         } catch (e) {
             console.log('player:' +e, speed);
             this.speed = null;
@@ -97,15 +96,14 @@ Player.prototype = {
 
     setSpeedMiksago: function (speed) {
         try {
-            var decoded = JSON.parse(speed);
-
-            if ('utf8Data' in decoded) {
+            if ('utf8Data' in speed) {
                 this.setSpeed(speed.utf8Data);
             } else {
                 this.setSpeed(speed);
             }
         } catch (e) {
-            console.log('player: set speed: ' + speed);
+            console.log('player:' +e, speed);
+            this.speed = null;
         }
     },
 
