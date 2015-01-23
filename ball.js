@@ -3,8 +3,8 @@ var Ball = function () {
 };
 Ball.constructor = Ball;
 Ball.prototype = {
-    width: 15 / 640,
-    height: 15 / 480,
+    width: 15 / 1280,
+    height: 15 / 720,
     x: 0.5,
     y: 0.5,
     speed: 0.005,
