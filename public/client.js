@@ -316,7 +316,7 @@ Scene.prototype = {
 
     render: function () {
         this.clear();
-
+/*
         var fps = this.fpsc();
 
         this.ctx.font="10pt Helvetica";
@@ -324,7 +324,7 @@ Scene.prototype = {
         this.ctx.textBaseline="middle";
         this.ctx.fillStyle="rgb(50,50,50)";
         this.ctx.fillText('FPS ' + fps, 10, 10);
-
+*/
         for (var ob in this.objects) {
             this.objects[ob].draw(this.ctx);
         }
@@ -338,6 +338,9 @@ var cnv, scene;
 
 function init() {
     cnv = document.getElementsByTagName('canvas')[0];
+	cnv.width = window.innerWidth;
+	cnv.height = window.innerHeight;
+	
     scene = new Scene(cnv);
 
     var paddleLeft,
