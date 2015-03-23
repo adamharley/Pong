@@ -94,7 +94,7 @@ function init() {
 
 
 	function motionAccelChange(e) {
-		var motion = Math.max(-8, Math.min(8, e.accelerationIncludingGravity.x)),
+		var motion = Math.max(-8, Math.min(8, e.accelerationIncludingGravity.y)),
 			speed = {
 				x: 0,
 				y: Math.round(motion / 16 * 2 * 10) / 10
